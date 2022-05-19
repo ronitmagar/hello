@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1100x400/?contact,phone" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="my-5">
+    <h3 style="text-align:center"><b>Contact Us</b></h3>
+</div>
+<form class="px-2" method="post" action="/contact">
+    {% csrf_token %}
+<div class="px-5">
+    <div class="mb-4">
+     <label for="exampleFormControlInput1" class="form-label">Name</label>
+     <input type="text" class="form-control" id="exampleFormControlInput0" name="name" placeholder="Your name/Organization name" required>
+    </div>
+    <div class="mb-4">
+     <label for="exampleFormControlInput1" class="form-label">Email address</label>
+     <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com" required>
+    </div>
+    <div class="mb-4">
+     <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+     <input type="phone" class="form-control" id="exampleFormControlInput2"  name="phone" placeholder="9876543210" required>
+    </div>
+    <div class="mb-4">
+     <label for="exampleFormControlInput1" class="form-label">Country</label>
+     <input type="tel" class="form-control" id="exampleFormControlInput3" name="country" placeholder="India" required>
+    </div>
+    <select class="form-select form-select-sm mb-4"  name="service" aria-label=".form-select-sm example" required>
+        <option selected>Services</option>
+        <option value="Website/app">Website/app</option>
+        <option value="AI/ML">AI/ML</option>
+        <option value="Cloud">Cloud</option>
+        <option value="Automation">Automation</option>
+        <option value="IOT">IOT</option>
+        <option value="Others">Others</option>
+    </select>
+    <div class="mb-4">
+     <label for="exampleFormControlTextarea1" class="form-label">Regarding</label>
+     <textarea class="form-control" id="exampleFormControlTextarea1" name="text" rows="3"></textarea>
+    </div>
+    <div class="col-12 my-4">
+     <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</div>
+
+</form>
+
+{% endblock body%}
+{% block title %}
+Contact
+{% endblock title %}
