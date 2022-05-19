@@ -25,8 +25,19 @@ def services(request):
     # return HttpResponse('this is service page')
 
 def aiml(request):
-    return render('aiml.html')
+    return render(request, 'aiml.html')
 
+def automation(request):
+    return render(request, 'automation.html')
+
+def cloud(request):
+    return render(request, 'cloud.html')
+
+def Iot(request):
+    return render(request, 'Iot.html')
+
+def Other(request):
+    return render(request, 'Other.html')
 
 def contact(request):
     if request.method == "POST":
